@@ -14,8 +14,12 @@ output_option = gets.chomp.to_i
 
 if (1..3).member? output_option then
 
-	spoder = Spider::Spider.new
-	raw_html = spoder.spide url
+	begin
+		spoder = Spider::Spider.new
+		raw_html = spoder.spide url
+	rescue
+		puts "Invalid URL"
+	end
 
 	case output_option
 	when 1, 3
