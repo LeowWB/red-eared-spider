@@ -11,6 +11,13 @@ module Spider
 		end
 
 		def spide url
+
+			open(url) do |f|
+				f.each_line do |line|
+					puts line
+				end
+			end
+
 		end
 	end
 end
