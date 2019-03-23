@@ -7,17 +7,19 @@ module Spider
 	class Spider
 
 		def initialize
-			
 		end
 
 		def spide url
 
+			rv = ""
+
 			open(url) do |f|
 				f.each_line do |line|
-					puts line
+					rv << line
 				end
 			end
 
+			return rv
 		end
 	end
 end
